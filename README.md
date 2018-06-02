@@ -1,12 +1,16 @@
-# Laboratorio de Métodos Numéricos
+# Photometric Stereo
 
-## Dependencias
+## Documentation
+* All documentation can be found in **Documentation - Informe.pdf**. This includes development and experimentation
+
+
+## Dependencies
 
 * pdflatex
 * latexmk
 * gcc
 
-## Instalación
+## Installation
 
 ```
 sudo apt-get install -y \
@@ -18,8 +22,7 @@ sudo apt-get install -y \
   texlive-latex-recommended
 ```
 
-## Uso
+## Compilation
 
-* `make doc` genera el informe
-* `make clean` borra archivos temporales
-* `make test` corre los tests de unidad
+* `make clean` deletes temporal files
+* `make test` runs unit tests
