@@ -1,0 +1,12 @@
+set encoding iso_8859_1
+
+set terminal cairolatex pdf
+# para imprimir usar esta terminal:
+#set terminal cairolatex pdf mono dashed
+
+set grid
+
+load "colors.gpi"
+
+set output "plot/sample.tex"
+plot [-30:20] besj0(x)*0.12e1 with impulses, (x**besj0(x))-2.5 with points

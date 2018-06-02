@@ -1,0 +1,21 @@
+#!/usr/bin/octave -qf
+
+if (nargin != 2)
+    printf("Uso: ./plot_depth Z_FILE PDF");
+    exit(1);
+endif
+
+graphics_toolkit gnuplot
+figure('visible', 'off');
+
+arg_list = argv();
+
+Z = dlmread(arg_list{1});
+Z = Z(1:end-1, 1:end-1);
+Z = Z';
+disp(size(Z));
+
+imagesc(Z);
+colormap(gray);
+view(190-90, 80);
+print(arg_list{2});

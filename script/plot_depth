@@ -1,0 +1,25 @@
+#!/usr/bin/octave -qf
+
+if (nargin != 2)
+    printf("Uso: ./plot_depth Z_FILE PDF");
+    exit(1);
+endif
+
+graphics_toolkit gnuplot
+figure('visible', 'off');
+shading interp;
+
+arg_list = argv();
+
+Z = dlmread(arg_list{1});
+Z = Z(1:2:end-1, 1:2:end-1);
+
+[height, width, ~] = size(Z);
+[X, Y] = meshgrid(1:width, 1:height);
+
+mesh(X, Y, Z);
+view(190-90, 80);
+axis off;
+#axis equal;
+
+print(arg_list{2});

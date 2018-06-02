@@ -1,0 +1,8 @@
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.swp
+.ipynb_checkpoints/
+calibrate
+3dbuild
+run_tests
